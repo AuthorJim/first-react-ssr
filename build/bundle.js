@@ -86,15 +86,15 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/containers/Home/index.js":
-/*!**************************************!*\
-  !*** ./src/containers/Home/index.js ***!
-  \**************************************/
+/***/ "./src/containers/Home/index.jsx":
+/*!***************************************!*\
+  !*** ./src/containers/Home/index.jsx ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar React = __webpack_require__(/*! react */ \"react\");\n\nfunction Home() {\n    return React.createElement(\n        'div',\n        null,\n        '\\u4ECA\\u665A\\u6253\\u8001\\u864E\\u5417'\n    );\n}\n\nmodule.exports = {\n    default: Home\n};\n\n//# sourceURL=webpack:///./src/containers/Home/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction Home() {\n    var handleClick = function handleClick() {\n        alert('nihao');\n    };\n    return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n            'div',\n            { style: { color: 'red', fontSize: 20, marginBottom: 20 } },\n            '\\u6211\\u662F\\u4E2D\\u56FD\\u4EBA\\uD83C\\uDDE8\\uD83C\\uDDF3'\n        ),\n        _react2.default.createElement(\n            'button',\n            { onClick: handleClick },\n            '\\u70B9\\u51FB\\u4E00\\u4E0B'\n        )\n    );\n}\n\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/containers/Home/index.jsx?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("\n\nvar React = __webpack_require__(/*! react */ \"react\");\n\nfunction H
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar express = __webpack_require__(/*! express */ \"express\");\n\nvar app = express();\nvar Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.js\");\n\napp.get('/', function (req, res) {\n  return res.send('<h1>\\u4F60\\u4ED6\\u5988\\u7684\\u5230\\u5E95\\u662F\\u8C01</h1><a href=\"https://www.baidu.com\">\\u6211\\u600E\\u4E48\\u77E5\\u9053\\u6211\\u662F\\u8C01</a>');\n});\n\napp.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"react-dom\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.jsx\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\nvar content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));\n// const content = ReactDom.render(<Home />, document.getElementById('root'))\n\napp.get('/', function (req, res) {\n    return res.send('\\n    <html>\\n        <title>\\u670D\\u52A1\\u5668\\u7AEF\\u6E32\\u67D3</title>\\n        <body>\\n            <div id=\"root\">\\n                ' + content + '\\n            </div>\\n        </body>\\n    </html>\\n');\n});\n\napp.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -129,6 +129,28 @@ eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///externa
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_%22react%22?");
+
+/***/ }),
+
+/***/ "react-dom":
+/*!****************************!*\
+  !*** external "react-dom" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-dom\");\n\n//# sourceURL=webpack:///external_%22react-dom%22?");
+
+/***/ }),
+
+/***/ "react-dom/server":
+/*!***********************************!*\
+  !*** external "react-dom/server" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:///external_%22react-dom/server%22?");
 
 /***/ })
 

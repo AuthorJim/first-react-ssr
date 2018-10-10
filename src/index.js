@@ -1,8 +1,25 @@
-const express = require('express')
+import express from 'express'
+import React from 'react'
+import ReactDom from 'react-dom'
+import { renderToString } from 'react-dom/server'
+
+import Home from './containers/Home'
 
 const app = express()
-const Home = require('./containers/Home')
+const content = renderToString(<Home />)
+// const content = ReactDom.render(<Home />, document.getElementById('root'))
 
-app.get('/', (req, res) => res.send(`<h1>你他妈的到底是谁</h1><a href="https://www.baidu.com">我怎么知道我是谁</a>`))
+app.get('/', (req, res) =>
+    res.send(`
+    <html>
+        <title>服务器端渲染</title>
+        <body>
+            <div id="root">
+                ${content}
+            </div>
+        </body>
+    </html>
+`)
+)
 
 app.listen(3000)
