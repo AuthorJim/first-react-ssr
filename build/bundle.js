@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/server/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -98,15 +98,15 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 
 /***/ }),
 
-/***/ "./src/index.js":
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
+/***/ "./src/server/index.js":
+/*!*****************************!*\
+  !*** ./src/server/index.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"react-dom\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _Home = __webpack_require__(/*! ./containers/Home */ \"./src/containers/Home/index.jsx\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\napp.use(_express2.default.static('public'));\nvar content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));\n\napp.get('/', function (req, res) {\n    return res.send('\\n    <html>\\n        <title>\\u670D\\u52A1\\u5668\\u7AEF\\u6E32\\u67D3</title>\\n        <body>\\n            <div id=\"root\">' + content + '</div>\\n            <script src=\"/index.js\"></script> \\n        </body>\\n    </html>\\n');\n});\n\napp.listen(3000);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"react-dom\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _index = __webpack_require__(/*! ../containers/Home/index */ \"./src/containers/Home/index.jsx\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\napp.use(_express2.default.static('public'));\nvar content = (0, _server.renderToString)(_react2.default.createElement(_index2.default, null));\n\napp.get('/', function (req, res) {\n    return res.send('\\n    <html>\\n        <title>\\u670D\\u52A1\\u5668\\u7AEF\\u6E32\\u67D3</title>\\n        <body>\\n            <div id=\"root\">' + content + '</div>\\n            <script src=\"/index.js\"></script> \\n        </body>\\n    </html>\\n');\n});\n\napp.listen(3000);\n\n//# sourceURL=webpack:///./src/server/index.js?");
 
 /***/ }),
 
