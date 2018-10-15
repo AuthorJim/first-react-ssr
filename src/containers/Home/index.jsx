@@ -2,9 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-const mapStateToProps = store => ({
-    name: store.name
-})
+const mapStateToProps = ({ name }) => ({ name })
 
 function Home(props) {
     return (

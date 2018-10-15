@@ -1,16 +1,14 @@
 import React from 'react'
 import { StaticRouter } from 'react-router-dom'
 import { renderToString } from 'react-dom/server'
-import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
 import Routes from '../routes'
+import getStore from '../store'
 
 const render = req => {
-    const reducer = (state = { name: 'ssssss' }, action) => state
-    const store = createStore(reducer)
     const content = renderToString(
-        <Provider store={store}>
+        <Provider store={getStore()}>
             <StaticRouter location={req.path} context={{}}>
                 {Routes}
             </StaticRouter>
