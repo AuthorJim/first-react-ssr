@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction Home() {\n    return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n            'div',\n            { style: { color: 'red', fontSize: 20, marginBottom: 20 } },\n            '\\u6211\\u662F\\u4E2D\\u56FD\\u4EBA\\uD83C\\uDDE8\\uD83C\\uDDF3'\n        ),\n        _react2.default.createElement(\n            _reactRouterDom.Link,\n            { to: '/login' },\n            _react2.default.createElement(\n                'button',\n                null,\n                '\\u70B9\\u51FB\\u4E00\\u4E0B'\n            )\n        )\n    );\n}\n\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/containers/Home/index.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"react-redux\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar mapStateToProps = function mapStateToProps(store) {\n    return {\n        name: store.name\n    };\n};\n\nfunction Home(props) {\n    return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n            'div',\n            { style: { color: 'red', fontSize: 20, marginBottom: 20 } },\n            '\\u6211\\u662F\\u4E2D\\u56FD\\u4EBA\\uD83C\\uDDE8\\uD83C\\uDDF3'\n        ),\n        _react2.default.createElement(\n            _reactRouterDom.Link,\n            { to: '/login' },\n            _react2.default.createElement(\n                'button',\n                null,\n                '\\u70B9\\u51FB\\u4E00\\u4E0B'\n            )\n        ),\n        _react2.default.createElement(\n            'p',\n            null,\n            props.name\n        )\n    );\n}\n\nexports.default = (0, _reactRedux.connect)(mapStateToProps, null)(Home);\n\n//# sourceURL=webpack:///./src/containers/Home/index.jsx?");
 
 /***/ }),
 
@@ -142,7 +142,7 @@ eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _routes = __webpack_require__(/*! ../routes */ \"./src/routes/index.jsx\");\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar render = function render(req) {\n    var content = (0, _server.renderToString)(_react2.default.createElement(\n        _reactRouterDom.StaticRouter,\n        { location: req.path, context: {} },\n        _routes2.default\n    ));\n    return '\\n    <html>\\n        <title>\\u670D\\u52A1\\u5668\\u7AEF\\u6E32\\u67D3</title>\\n        <body>\\n            <div id=\"root\">' + content + '</div>\\n            <script src=\"/index.js\"></script> \\n        </body>\\n    </html>\\n';\n};\n\nexports.default = render;\n\n//# sourceURL=webpack:///./src/server/render.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _redux = __webpack_require__(/*! redux */ \"redux\");\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"react-redux\");\n\nvar _routes = __webpack_require__(/*! ../routes */ \"./src/routes/index.jsx\");\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar render = function render(req) {\n    var reducer = function reducer() {\n        var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { name: 'ssssss' };\n        var action = arguments[1];\n        return state;\n    };\n    var store = (0, _redux.createStore)(reducer);\n    var content = (0, _server.renderToString)(_react2.default.createElement(\n        _reactRedux.Provider,\n        { store: store },\n        _react2.default.createElement(\n            _reactRouterDom.StaticRouter,\n            { location: req.path, context: {} },\n            _routes2.default\n        )\n    ));\n    return '\\n    <html>\\n        <title>\\u670D\\u52A1\\u5668\\u7AEF\\u6E32\\u67D3</title>\\n        <body>\\n            <div id=\"root\">' + content + '</div>\\n            <script src=\"/index.js\"></script> \\n        </body>\\n    </html>\\n';\n};\n\nexports.default = render;\n\n//# sourceURL=webpack:///./src/server/render.jsx?");
 
 /***/ }),
 
@@ -179,6 +179,17 @@ eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:/
 
 /***/ }),
 
+/***/ "react-redux":
+/*!******************************!*\
+  !*** external "react-redux" ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"react-redux\");\n\n//# sourceURL=webpack:///external_%22react-redux%22?");
+
+/***/ }),
+
 /***/ "react-router-dom":
 /*!***********************************!*\
   !*** external "react-router-dom" ***!
@@ -187,6 +198,17 @@ eval("module.exports = require(\"react-dom/server\");\n\n//# sourceURL=webpack:/
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"react-router-dom\");\n\n//# sourceURL=webpack:///external_%22react-router-dom%22?");
+
+/***/ }),
+
+/***/ "redux":
+/*!************************!*\
+  !*** external "redux" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = require(\"redux\");\n\n//# sourceURL=webpack:///external_%22redux%22?");
 
 /***/ })
 
