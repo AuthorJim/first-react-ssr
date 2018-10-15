@@ -94,7 +94,19 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction Home() {\n    var handleClick = function handleClick() {\n        alert('nihao');\n    };\n    return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n            'div',\n            { style: { color: 'red', fontSize: 20, marginBottom: 20 } },\n            '\\u6211\\u662F\\u4E2D\\u56FD\\u4EBA\\uD83C\\uDDE8\\uD83C\\uDDF3'\n        ),\n        _react2.default.createElement(\n            'button',\n            { onClick: handleClick },\n            '\\u70B9\\u51FB\\u4E00\\u4E0B'\n        )\n    );\n}\n\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/containers/Home/index.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction Home() {\n    return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n            'div',\n            { style: { color: 'red', fontSize: 20, marginBottom: 20 } },\n            '\\u6211\\u662F\\u4E2D\\u56FD\\u4EBA\\uD83C\\uDDE8\\uD83C\\uDDF3'\n        ),\n        _react2.default.createElement(\n            _reactRouterDom.Link,\n            { to: '/login' },\n            _react2.default.createElement(\n                'button',\n                null,\n                '\\u70B9\\u51FB\\u4E00\\u4E0B'\n            )\n        )\n    );\n}\n\nexports.default = Home;\n\n//# sourceURL=webpack:///./src/containers/Home/index.jsx?");
+
+/***/ }),
+
+/***/ "./src/containers/Login/index.jsx":
+/*!****************************************!*\
+  !*** ./src/containers/Login/index.jsx ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nfunction Login() {\n    return _react2.default.createElement(\n        'div',\n        null,\n        _react2.default.createElement(\n            'h1',\n            { style: { color: 'blue', fontSize: 20, marginBottom: 20 } },\n            '\\u8BF7\\u4F60\\u767B\\u5F55 \\u5E72\\u4F60\\u5988\\u7684\\uD83C\\uDDFA\\uD83C\\uDDF8'\n        ),\n        _react2.default.createElement(\n            _reactRouterDom.Link,\n            { to: '/' },\n            '\\u56DE\\u5230\\u9996\\u9875'\n        )\n    );\n}\n\nexports.default = Login;\n\n//# sourceURL=webpack:///./src/containers/Login/index.jsx?");
 
 /***/ }),
 
@@ -106,7 +118,7 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _Home = __webpack_require__(/*! ../containers/Home */ \"./src/containers/Home/index.jsx\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// const Routes = () => (\n\n// )\n\nexports.default = _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _Home2.default })\n);\n\n//# sourceURL=webpack:///./src/routes/index.jsx?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _Home = __webpack_require__(/*! ../containers/Home */ \"./src/containers/Home/index.jsx\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nvar _Login = __webpack_require__(/*! ../containers/Login */ \"./src/containers/Login/index.jsx\");\n\nvar _Login2 = _interopRequireDefault(_Login);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports.default = _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: _Home2.default }),\n    _react2.default.createElement(_reactRouterDom.Route, { path: '/login', exact: true, component: _Login2.default })\n);\n\n//# sourceURL=webpack:///./src/routes/index.jsx?");
 
 /***/ }),
 
@@ -118,7 +130,19 @@ eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactDom = __webpack_require__(/*! react-dom */ \"react-dom\");\n\nvar _reactDom2 = _interopRequireDefault(_reactDom);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _index = __webpack_require__(/*! ../containers/Home/index */ \"./src/containers/Home/index.jsx\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nvar _routes = __webpack_require__(/*! ../routes */ \"./src/routes/index.jsx\");\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\napp.use(_express2.default.static('public'));\n\napp.get('/', function (req, res) {\n    var content = (0, _server.renderToString)(_react2.default.createElement(\n        _reactRouterDom.StaticRouter,\n        { location: req.path, context: {} },\n        _routes2.default\n    ));\n    res.send('\\n        <html>\\n            <title>\\u670D\\u52A1\\u5668\\u7AEF\\u6E32\\u67D3</title>\\n            <body>\\n                <div id=\"root\">' + content + '</div>\\n                <script src=\"/index.js\"></script> \\n            </body>\\n        </html>\\n    ');\n});\n\napp.listen(3000);\n\n//# sourceURL=webpack:///./src/server/index.js?");
+eval("\n\nvar _express = __webpack_require__(/*! express */ \"express\");\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _render = __webpack_require__(/*! ./render */ \"./src/server/render.jsx\");\n\nvar _render2 = _interopRequireDefault(_render);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar app = (0, _express2.default)();\napp.use(_express2.default.static('public'));\n\napp.get('*', function (req, res) {\n  return res.send((0, _render2.default)(req));\n});\n\napp.listen(3000);\n\n//# sourceURL=webpack:///./src/server/index.js?");
+
+/***/ }),
+
+/***/ "./src/server/render.jsx":
+/*!*******************************!*\
+  !*** ./src/server/render.jsx ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _react = __webpack_require__(/*! react */ \"react\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"react-router-dom\");\n\nvar _server = __webpack_require__(/*! react-dom/server */ \"react-dom/server\");\n\nvar _routes = __webpack_require__(/*! ../routes */ \"./src/routes/index.jsx\");\n\nvar _routes2 = _interopRequireDefault(_routes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar render = function render(req) {\n    var content = (0, _server.renderToString)(_react2.default.createElement(\n        _reactRouterDom.StaticRouter,\n        { location: req.path, context: {} },\n        _routes2.default\n    ));\n    return '\\n    <html>\\n        <title>\\u670D\\u52A1\\u5668\\u7AEF\\u6E32\\u67D3</title>\\n        <body>\\n            <div id=\"root\">' + content + '</div>\\n            <script src=\"/index.js\"></script> \\n        </body>\\n    </html>\\n';\n};\n\nexports.default = render;\n\n//# sourceURL=webpack:///./src/server/render.jsx?");
 
 /***/ }),
 
@@ -141,17 +165,6 @@ eval("module.exports = require(\"express\");\n\n//# sourceURL=webpack:///externa
 /***/ (function(module, exports) {
 
 eval("module.exports = require(\"react\");\n\n//# sourceURL=webpack:///external_%22react%22?");
-
-/***/ }),
-
-/***/ "react-dom":
-/*!****************************!*\
-  !*** external "react-dom" ***!
-  \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("module.exports = require(\"react-dom\");\n\n//# sourceURL=webpack:///external_%22react-dom%22?");
 
 /***/ }),
 
