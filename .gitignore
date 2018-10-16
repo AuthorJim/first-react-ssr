@@ -1,0 +1,12 @@
+node_modules
+npm-debug*
+/lib
+/index.html
+/.cache-loader
+/.awcache
+/.cache-loader
+/typedoc
+/.DS_Store
+**/.DS_Store
+/.vs
+/.next
